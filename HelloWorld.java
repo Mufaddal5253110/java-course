@@ -8,3 +8,8 @@ public class HelloWorld {
 		System.out.println("Programming is fun");
 	}
 }
+/*
+ * Welcome to Java
+ * Welcome to Computer Science
+ * Programming is fun
+ */
