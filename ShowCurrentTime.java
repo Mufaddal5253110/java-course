@@ -39,6 +39,8 @@ public class ShowCurrentTime {
 		// Display results
 		System.out.println("Current time is " + currentHour + ":"
 				+ currentMinute + ":" + currentSecond);
+		
+		input.close();
 	}
 }
 
