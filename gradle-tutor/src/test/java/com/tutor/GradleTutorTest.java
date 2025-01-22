@@ -1,5 +1,8 @@
 package com.tutor;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,22 +12,23 @@ import org.junit.Assert;
 public class GradleTutorTest {
 
     @Test
-    public void testComputeFinalPosition() {
+    public void testComputeFinalPosition() throws IOException {
+        Path path = Path.of(getClass().getClassLoader().getResource("com/tutor/testcases.txt").getPath());
+
+        List<String> lines = Files.readAllLines(path);
         Rover rover = new Rover();
-
-        List<List<String>> testCases = Arrays.asList(
-                Arrays.asList("5 5", "1 2 N", "LMLMLMLMM", "1 3 N"),
-                Arrays.asList("5 5", "3 3 E", "MMRMMRMRRM", "5 1 E"),
-                Arrays.asList("7 7", "2 3 S", "MMMLM", "3 0 E"));
-
-        for (List<String> testCase : testCases) {
-            String plateauCoordinates = testCase.get(0);
-            String initialPosition = testCase.get(1);
-            String instructions = testCase.get(2);
-            String expected = testCase.get(3);
+        String plateauCoordinates = lines.get(0);
+        List<String> expectedResults = Arrays.asList("1 3 N", "5 1 E");
+        int k = 0;
+        for (int i = 1; i < lines.size(); i += 2) {
+            String initialPosition = lines.get(i);
+            String instructions = lines.get(i + 1);
+            String expected = expectedResults.get(k++);
 
             String result = rover.computeFinalPosition(plateauCoordinates, initialPosition, instructions);
-            Assert.assertEquals("Test failed for input: " + testCase, expected, result);
+            Assert.assertEquals("Test failed for input: " + lines.get(i) + "Expected Output " + lines.get(i + 1),
+                    expected, result);
+
         }
     }
 }
