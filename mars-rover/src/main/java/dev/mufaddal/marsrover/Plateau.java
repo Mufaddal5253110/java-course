@@ -1,22 +1,16 @@
+import main.java.dev.mufaddal.marsrover.Coordinates;
+
 public class Plateau {
-    private int topRightX;
-    private int topRightY;
+    private Coordinates boundaryCoordinates;
 
-    public Plateau(int topRightX, int topRightY) {
-        this.topRightX = topRightX;
-        this.topRightY = topRightY;
+    public Plateau(Coordinates boundaryCoordinates) {
+        this.boundaryCoordinates = boundaryCoordinates;
     }
 
-    public int getTopRightX() {
-        return topRightX;
-    }
-
-    public int getTopRightY() {
-        return topRightY;
-    }
-
+    // Tell, Don’t Ask
     public boolean isWithinPlateauBoundary(Coordinates coordinates) {
-        return coordinates.getX() >= 0 && coordinates.getX() <= topRightX && coordinates.getY() >= 0
-                && coordinates.getY() <= topRightY;
+        return coordinates.getX() >= 0 && coordinates.getX() <= this.boundaryCoordinates.getX()
+                && coordinates.getY() >= 0
+                && coordinates.getY() <= this.boundaryCoordinates.getY();
     }
 }

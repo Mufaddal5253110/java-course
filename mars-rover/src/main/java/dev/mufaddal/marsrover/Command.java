@@ -1,5 +1,6 @@
 package main.java.dev.mufaddal.marsrover;
 
+// Abstraction
 public enum Command {
     LEFT, RIGHT, MOVE;
 
