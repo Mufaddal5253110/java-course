@@ -15,16 +15,15 @@ public class Rover {
         this.plateau = plateau;
     }
 
-    public void processCommand(char command) {
-        Command cmd = Command.fromChar(command);
-        switch (cmd) {
+    public void processCommand(Command command) {
+        switch (command) {
             case LEFT -> turnLeft();
             case RIGHT -> turnRight();
             case MOVE -> move();
         }
     }
 
-    private void move() {
+    public void move() {
         Coordinates newCoordinates = this.getCurrentCoordinates().newCoordinates(
                 this.getCurrentDirection().getxIncrement(),
                 this.getCurrentDirection().getyIncrement());
@@ -33,11 +32,11 @@ public class Rover {
         }
     }
 
-    private void turnLeft() {
+    public void turnLeft() {
         location.setDirection(this.getCurrentDirection().turnLeft());
     }
 
-    private void turnRight() {
+    public void turnRight() {
         location.setDirection(this.getCurrentDirection().turnRight());
     }
 
