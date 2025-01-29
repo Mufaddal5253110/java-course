@@ -1,4 +1,4 @@
-package main.java.dev.mufaddal.marsrover;
+package dev.mufaddal.marsrover;
 
 public class Main {
     public static void main(String[] args) {

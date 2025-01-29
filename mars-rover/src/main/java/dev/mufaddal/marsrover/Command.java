@@ -1,4 +1,4 @@
-package main.java.dev.mufaddal.marsrover;
+package dev.mufaddal.marsrover;
 
 // Abstraction
 public enum Command {

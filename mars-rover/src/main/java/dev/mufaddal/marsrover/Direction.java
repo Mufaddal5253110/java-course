@@ -1,4 +1,4 @@
-package main.java.dev.mufaddal.marsrover;
+package dev.mufaddal.marsrover;
 
 // Abstraction
 public enum Direction {
@@ -37,6 +37,16 @@ public enum Direction {
             case EAST -> 0;
             case SOUTH -> -1;
             case WEST -> 0;
+        };
+    }
+
+    @Override
+    public String toString() {
+        return switch (this) {
+            case NORTH -> "N";
+            case EAST -> "E";
+            case SOUTH -> "S";
+            case WEST -> "W";
         };
     }
 }

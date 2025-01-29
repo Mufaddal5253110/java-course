@@ -1,4 +1,4 @@
-package main.java.dev.mufaddal.marsrover;
+package dev.mufaddal.marsrover;
 
 public class Coordinates {
     private int x;

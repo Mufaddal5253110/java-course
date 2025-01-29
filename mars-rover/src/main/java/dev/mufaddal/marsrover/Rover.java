@@ -1,4 +1,4 @@
-package main.java.dev.mufaddal.marsrover;
+package dev.mufaddal.marsrover;
 
 public class Rover {
 
@@ -21,6 +21,10 @@ public class Rover {
             case RIGHT -> turnRight();
             case MOVE -> move();
         }
+    }
+
+    public String currentLocation(){
+        return location.toString();
     }
 
     public void move() {

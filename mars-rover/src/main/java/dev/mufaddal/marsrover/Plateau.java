@@ -1,4 +1,4 @@
-import main.java.dev.mufaddal.marsrover.Coordinates;
+package dev.mufaddal.marsrover;
 
 public class Plateau {
     private Coordinates boundaryCoordinates;
