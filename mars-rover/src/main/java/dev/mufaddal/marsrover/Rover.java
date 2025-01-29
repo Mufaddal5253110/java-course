@@ -1,5 +1,7 @@
 package dev.mufaddal.marsrover;
 
+import java.util.List;
+
 public class Rover {
 
     /**
@@ -15,15 +17,12 @@ public class Rover {
         this.plateau = plateau;
     }
 
-    public void processCommand(Command command) {
-        switch (command) {
-            case LEFT -> turnLeft();
-            case RIGHT -> turnRight();
-            case MOVE -> move();
-        }
+    public void processCommand(final String command) {
+        final List<ICommand> commands = new StringCommandParser(command).toCommands();
+        commands.forEach(c -> c.execute(this));
     }
 
-    public String currentLocation(){
+    public String currentLocation() {
         return location.toString();
     }
 
